@@ -8,35 +8,35 @@ namespace GithubActionBuildTests.Controllers
     public class CalculatorController : ControllerBase
     {
         [HttpGet("v1/sum")]
-        public async Task<IActionResult> Sum([FromQuery] int a, [FromQuery] int b)
+        public IActionResult Sum([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Sum());
         }
 
         [HttpGet("v1/min")]
-        public async Task<IActionResult> Min([FromQuery] int a, [FromQuery] int b)
+        public IActionResult Min([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Min());
         }
 
         [HttpGet("v1/div")]
-        public async Task<IActionResult> Div([FromQuery] int a, [FromQuery] int b)
+        public IActionResult Div([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Div());
         }
 
         [HttpGet("v1/mult")]
-        public async Task<IActionResult> Mult([FromQuery] int a, [FromQuery] int b)
+        public IActionResult Mult([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Mult());
         }
 
         [HttpGet("v1/max")]
-        public async Task<IActionResult> Max([FromQuery] int a, [FromQuery] int b)
+        public IActionResult Max([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Max());

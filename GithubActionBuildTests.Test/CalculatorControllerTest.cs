@@ -15,7 +15,7 @@ namespace GithubActionBuildTests.Test
 
             var expResult = 8;
             var controller = new CalculatorController();
-            var result = await controller.Sum(a,b) as OkObjectResult;
+            var result = controller.Sum(a,b) as OkObjectResult;
             var num = (int)result.Value;
 
             num.Should().Be(expResult);
@@ -29,8 +29,22 @@ namespace GithubActionBuildTests.Test
 
             var expResult = 6;
             var controller = new CalculatorController();
-            var result = await controller.Max(a, b) as OkObjectResult;
+            var result = controller.Max(a, b) as OkObjectResult;
             var num = (int)result.Value;
+
+            num.Should().Be(expResult);
+        }
+
+        [Fact]
+        public async Task DivTest()
+        {
+            int a = 6;
+            int b = 2;
+
+            var expResult = 3.0;
+            var controller = new CalculatorController();
+            var result = controller.Div(a, b) as OkObjectResult;
+            var num = (double)result.Value;
 
             num.Should().Be(expResult);
         }
