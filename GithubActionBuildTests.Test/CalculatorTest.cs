@@ -12,7 +12,7 @@ namespace GithubActionBuildTests.Test
             int a = 6;
             int b = 2;
 
-            var expResult = 8;
+            var expResult = 9;
             var calculator = new Calculator(a,b);
             var result = calculator.Sum();
 
