@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using GithubActionBuildTests.Models;
+using GithubActionBuildTests.Domain.Models;
 using Xunit;
 
 namespace GithubActionBuildTests.Test

@@ -1,4 +1,4 @@
-using GithubActionBuildTests.Models;
+using GithubActionBuildTests.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GithubActionBuildTests.Controllers

@@ -1,4 +1,4 @@
-﻿namespace GithubActionBuildTests.Models
+﻿namespace GithubActionBuildTests.Domain.Models
 {
     public class Calculator
     {
@@ -16,12 +16,12 @@
             return A + B;
         }
 
-        public int Min() 
+        public int Min()
         {
             return A - B;
         }
 
-        public int Mult() 
+        public int Mult()
         {
             return A * B;
         }
@@ -31,7 +31,7 @@
             return A / B;
         }
 
-        public int Minimum() 
+        public int Minimum()
         {
             return A < B ? A : B;
         }
