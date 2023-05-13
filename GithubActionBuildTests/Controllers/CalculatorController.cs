@@ -35,11 +35,11 @@ namespace GithubActionBuildTests.Controllers
             return Ok(calc.Mult());
         }
 
-        [HttpGet("v1/max")]
-        public IActionResult Max([FromQuery] int a, [FromQuery] int b)
+        [HttpGet("v1/minimum")]
+        public IActionResult Minimum([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
-            return Ok(calc.Max());
+            return Ok(calc.Minimum());
         }
     }
 }
