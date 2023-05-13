@@ -22,14 +22,14 @@ namespace GithubActionBuildTests.Test
         }
 
         [Fact]
-        public async Task MaxTest()
+        public async Task MinimumTest()
         {
             int a = 6;
             int b = 2;
 
-            var expResult = 6;
+            var expResult = 2;
             var controller = new CalculatorController();
-            var result = controller.Max(a, b) as OkObjectResult;
+            var result = controller.Minimum(a, b) as OkObjectResult;
             var num = (int)result.Value;
 
             num.Should().Be(expResult);
