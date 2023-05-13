@@ -7,35 +7,35 @@ namespace GithubActionBuildTests.Controllers
     [Route("[controller]")]
     public class CalculatorController : ControllerBase
     {
-        [HttpGet("sum")]
+        [HttpGet("v1/sum")]
         public async Task<IActionResult> Sum([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Sum());
         }
 
-        [HttpGet("min")]
+        [HttpGet("v1/min")]
         public async Task<IActionResult> Min([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Min());
         }
 
-        [HttpGet("div")]
+        [HttpGet("v1/div")]
         public async Task<IActionResult> Div([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Div());
         }
 
-        [HttpGet("mult")]
+        [HttpGet("v1/mult")]
         public async Task<IActionResult> Mult([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Mult());
         }
 
-        [HttpGet("max")]
+        [HttpGet("v1/max")]
         public async Task<IActionResult> Max([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
