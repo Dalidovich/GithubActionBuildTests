@@ -23,4 +23,4 @@ jobs:
     - name: Build
       run: dotnet build GithubActionBuildTests/GithubActionBuildTests.csproj
     - name: Test
-      run: dotnet test --verbosity normal
+      run: dotnet test ./GithubActionBuildTests2.sln --verbosity normal
