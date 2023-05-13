@@ -31,9 +31,9 @@
             return A / B;
         }
 
-        public int Max() 
+        public int Minimum() 
         {
-            return A > B ? A : B;
+            return A < B ? A : B;
         }
     }
 }
