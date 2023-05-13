@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore dotnet restore GithubActionBuildTests.sln
+      run: dotnet restore dotnet restore ./GithubActionBuildTests.sln
     - name: Build 
       run: dotnet build GithubActionBuildTests/GithubActionBuildTests.csproj
     - name: Test
