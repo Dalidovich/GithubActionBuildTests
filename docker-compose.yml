@@ -3,7 +3,7 @@ version: '3.3'
 services:
   githubactionbuildtests:
     container_name: test
-    image: githubactionbuildtests
+    image: gcr.io/githubactionbuildtests
     build:
       context: .
       dockerfile: GithubActionBuildTests/Dockerfile
