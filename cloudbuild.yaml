@@ -33,7 +33,7 @@ images: # Display the image in the build results - Build Artifacts
 - $_SERVICE_IMAGE
 
 substitutions:
-    _SERVICE_IMAGE    : githubactionbuildtests
+    _SERVICE_IMAGE    : gcr.io/githubactionbuildtests
     _SERVICE_REGION   : northamerica-northeast1
     _SERVICE_PROJECT  : intershipdeployprod
     _SERVICE_NAME     : docker-app-prod
