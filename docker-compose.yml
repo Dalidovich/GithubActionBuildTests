@@ -3,7 +3,7 @@ version: '3.4'
 services:
   githubactionbuildtests:
     container_name: test
-    image: ${DOCKER_REGISTRY-}githubactionbuildtests
+    image: githubactionbuildtests
     build:
       context: .
       dockerfile: GithubActionBuildTests/Dockerfile
