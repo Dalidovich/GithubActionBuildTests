@@ -1,7 +1,6 @@
 using GithubActionBuildTests.Domain;
 using GithubActionBuildTests.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.Intrinsics;
 
 namespace GithubActionBuildTests.Controllers
 {
