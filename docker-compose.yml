@@ -1,5 +1,9 @@
 version: '3.3'
 
+networks:
+  dev:
+    driver: bridge
+
 services:
   githubactionbuildtests:
     container_name: test
@@ -10,3 +14,24 @@ services:
       dockerfile: GithubActionBuildTests/Dockerfile
     environment:
       - TestValues__Value1="i am on docker desctop"
+      - ConnectionStrings__NpgConnectionString=User Id=postgres; Password=pg; Server=gabt_db; Port=5432; Database=GithubActionBuildTestDB; IntegratedSecurity=true; Pooling=true;
+    networks:
+      - dev
+
+  gabt_db: 
+    image: postgres:latest
+    container_name: gabt_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pg
+      - POSTGRES_DB=GithubActionBuildTestDB
+    ports:
+      - "5433:5432"
+    restart: always
+    volumes:
+      - app_data:/var/lib/postgresql/data
+    networks:
+      - dev
+
+volumes:
+  app_data:

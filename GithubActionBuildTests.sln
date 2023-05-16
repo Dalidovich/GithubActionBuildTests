@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubActionBuildTests", "G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubActionBuildTests.Test", "GithubActionBuildTests.Test\GithubActionBuildTests.Test.csproj", "{88F677AF-44A9-4546-B222-28DFE2568A3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubActionBuildTests.Domain", "GithubActionBuildTests.Domain\GithubActionBuildTests.Domain.csproj", "{22E1261E-B959-443F-9A79-C28C66F7A298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubActionBuildTests.Domain", "GithubActionBuildTests.Domain\GithubActionBuildTests.Domain.csproj", "{22E1261E-B959-443F-9A79-C28C66F7A298}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7E08F2A1-1498-43AE-8CE8-9D2069B4669B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubActionBuildTests.DAL", "GithubActionBuildTests.DAL\GithubActionBuildTests.DAL.csproj", "{FD4920E5-F056-4EAB-88B3-A3A0F6AF5C3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7E08F2A1-1498-43AE-8CE8-9D2069B4669B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E08F2A1-1498-43AE-8CE8-9D2069B4669B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E08F2A1-1498-43AE-8CE8-9D2069B4669B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4920E5-F056-4EAB-88B3-A3A0F6AF5C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4920E5-F056-4EAB-88B3-A3A0F6AF5C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4920E5-F056-4EAB-88B3-A3A0F6AF5C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4920E5-F056-4EAB-88B3-A3A0F6AF5C3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
