@@ -1,6 +1,4 @@
 ﻿using GithubActionBuildTests.DAL;
-using Microsoft.EntityFrameworkCore;
-using Npgsql;
 
 namespace GithubActionBuildTests
 {

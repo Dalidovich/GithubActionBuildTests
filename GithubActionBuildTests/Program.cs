@@ -16,7 +16,7 @@ namespace GithubActionBuildTests
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddHostedService<CheckDBHostedService>();
+            //builder.Services.AddHostedService<CheckDBHostedService>();
 
             builder.Services.AddScoped<CalculatorRepository>();
 
@@ -33,6 +33,8 @@ namespace GithubActionBuildTests
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<CheckDBMiddleware>();
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
