@@ -27,9 +27,11 @@ namespace GithubActionBuildTests
                 builder.Configuration.GetConnectionString(StandartConst.NameConnection)));
 
             var app = builder.Build();
-
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            if (app.Environment.IsProduction() || app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
             app.UseMiddleware<CheckDBMiddleware>();
 
