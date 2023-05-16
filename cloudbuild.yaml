@@ -5,7 +5,7 @@ steps:
 # Docker Build Image
   - name: gcr.io/cloud-builders/docker
     id  : BUILD
-    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'GithubActionBuildTests/deployDockerfile']
+    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'GithubActionBuildTests/Dockerfile']
 
 # Docker Push Image to Artifact Registry
   - name: gcr.io/cloud-builders/docker
@@ -17,22 +17,12 @@ steps:
     id  : DEPLOY
     args:
       - run
-      - -v
-      - /var/run/docker.sock:/var/run/docker.sock
-      - -it
+      - services
+      - update
       - $_SERVICE_NAME
       - --project=$_SERVICE_PROJECT
       - --region=$_SERVICE_REGION
       - --image=$_SERVICE_IMAGE
-
-    #args:
-    #  - run
-    #  - services
-    #  - update
-    #  - $_SERVICE_NAME
-    #  - --project=$_SERVICE_PROJECT
-    #  - --region=$_SERVICE_REGION
-    #  - --image=$_SERVICE_IMAGE
 
 images: # Display the image in the build results - Build Artifacts
 - $_SERVICE_IMAGE
