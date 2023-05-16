@@ -1,5 +1,7 @@
+using GithubActionBuildTests.Domain;
 using GithubActionBuildTests.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.Intrinsics;
 
 namespace GithubActionBuildTests.Controllers
 {
@@ -40,6 +42,13 @@ namespace GithubActionBuildTests.Controllers
         {
             var calc = new Calculator(a, b);
             return Ok(calc.Minimum());
+        }
+
+        [HttpGet("v1/Envvars")]
+        public IActionResult EnvVar()
+        {
+            var values = HttpContext.RequestServices.GetService<TestValues>();
+            return Ok(values);
         }
     }
 }

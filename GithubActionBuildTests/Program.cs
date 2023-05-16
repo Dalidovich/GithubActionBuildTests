@@ -1,3 +1,7 @@
+using GithubActionBuildTests.Domain;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Options;
+
 namespace GithubActionBuildTests
 {
     public class Program
@@ -9,6 +13,9 @@ namespace GithubActionBuildTests
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.Configure<TestValues>(builder.Configuration.GetSection("TestValues"));
+            builder.Services.AddSingleton(serviceProvider => serviceProvider.GetRequiredService<IOptions<TestValues>>().Value);
 
             var app = builder.Build();
 
