@@ -23,7 +23,7 @@ steps:
       - --project=$_SERVICE_PROJECT
       - --region=$_SERVICE_REGION
       - --image=$_SERVICE_IMAGE
-      - --TestValues__Value1="I am on gcp"
+      - TestValues__Value1="I am on gcp"
 
 images: # Display the image in the build results - Build Artifacts
 - $_SERVICE_IMAGE
