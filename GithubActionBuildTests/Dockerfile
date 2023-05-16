@@ -6,6 +6,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+ENV TestValues__Value1="I am on gcp"
 WORKDIR /src
 COPY ["GithubActionBuildTests/GithubActionBuildTests.csproj", "GithubActionBuildTests/"]
 COPY ["GithubActionBuildTests.Domain/GithubActionBuildTests.Domain.csproj", "GithubActionBuildTests.Domain/"]
