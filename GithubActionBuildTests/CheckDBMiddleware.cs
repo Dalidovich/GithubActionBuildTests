@@ -20,7 +20,7 @@ namespace GithubActionBuildTests
         {
             try
             {
-                if (!await httpContext.RequestServices.GetService<AppDBContext>().Accounts.AnyAsync())
+                if (!await httpContext.RequestServices.GetService<AppDBContext>().SummaryCalcs.AnyAsync())
                 {
                     httpContext.RequestServices.GetService<AppDBContext>().UpdateDatabase();
                 }
