@@ -7,15 +7,10 @@ steps:
     id  : BUILD
     args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'GithubActionBuildTests/Dockerfile']
 
-  - name: 'docker/compose:1.15.0'
-    args: ['up', '-d']
-    env:
-      - 'PROJECT_ID=$PROJECT_ID'
-
 # Docker Push Image to Artifact Registry
-  #- name: gcr.io/cloud-builders/docker
-  #  id  : PUSH
-  #  args: ['push', '$_SERVICE_IMAGE']
+  - name: gcr.io/cloud-builders/docker
+    id  : PUSH
+    args: ['push', '$_SERVICE_IMAGE']
 
 # Docker Deploy image to Cloud Run
   - name: gcr.io/cloud-builders/gcloud
@@ -33,7 +28,7 @@ images: # Display the image in the build results - Build Artifacts
 - $_SERVICE_IMAGE
 
 substitutions:
-    _SERVICE_IMAGE    : gcr.io/githubactionbuildtests
+    _SERVICE_IMAGE    : northamerica-northeast1-docker.pkg.dev/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
     _SERVICE_REGION   : northamerica-northeast1
     _SERVICE_PROJECT  : intershipdeployprod
     _SERVICE_NAME     : docker-app-prod
