@@ -11,12 +11,12 @@ steps:
   - name: gcr.io/cloud-builders/docker
     id  : PUSH
     args: ['push', '$_SERVICE_IMAGE']
+    env:
+    - 'TestValues__Value1="I am on gcp"'
 
 # Docker Deploy image to Cloud Run
   - name: gcr.io/cloud-builders/gcloud
     id  : DEPLOY
-    env:
-    - 'TestValues__Value1="I am on gcp"'
     args:
       - run
       - services
