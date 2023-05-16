@@ -19,6 +19,7 @@ RUN dotnet publish "GithubActionBuildTests.csproj" -c Release -o /app/publish /p
 
 FROM base AS final
 ENV TestValues__Value1="I am on gcp"
+ENV ConnectionStrings__NpgConnectionString="User Id=postgres; Password=intership; Server=35.203.119.3; Port=5432; Database=GithubActionBuildTestDB; IntegratedSecurity=true; Pooling=true;"
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "GithubActionBuildTests.dll"]
