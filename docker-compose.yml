@@ -8,3 +8,5 @@ services:
     build:
       context: .
       dockerfile: GithubActionBuildTests/Dockerfile
+    environment:
+      - TestValues__Value1="i am on docker desctop"
