@@ -6,11 +6,17 @@ steps:
   - name: gcr.io/cloud-builders/docker
     id  : BUILD
     args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'GithubActionBuildTests/Dockerfile']
+    env:
+    - 'TestValues__Value1="I am on gcp8"'
+    - TestValues__Value1="I am on gcp9"
 
 # Docker Push Image to Artifact Registry
   - name: gcr.io/cloud-builders/docker
     id  : PUSH
     args: ['push', '$_SERVICE_IMAGE']
+    env:
+    - 'TestValues__Value1="I am on gcp4"'
+    - TestValues__Value1="I am on gcp5"
 
 # Docker Deploy image to Cloud Run
   - name: gcr.io/cloud-builders/gcloud
@@ -23,6 +29,9 @@ steps:
       - --project=$_SERVICE_PROJECT
       - --region=$_SERVICE_REGION
       - --image=$_SERVICE_IMAGE
+    env:
+    - 'TestValues__Value1="I am on gcp6"'
+    - TestValues__Value1="I am on gcp7"
 
 images: # Display the image in the build results - Build Artifacts
 - $_SERVICE_IMAGE
