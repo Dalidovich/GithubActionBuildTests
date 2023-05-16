@@ -8,6 +8,14 @@ namespace GithubActionBuildTests.Controllers
     [Route("[controller]")]
     public class CalculatorController : ControllerBase
     {
+        [HttpGet("v1/test")]
+        public IActionResult Get() 
+        {
+            var s = new SummaryCalc("test", 3, 8);
+            return Ok(s);
+        }
+
+
         [HttpGet("v1/sum")]
         public IActionResult Sum([FromQuery] int a, [FromQuery] int b)
         {

@@ -28,11 +28,8 @@ namespace GithubActionBuildTests
 
             var app = builder.Build();
 
-            if (true)//(app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseMiddleware<CheckDBMiddleware>();
 
