@@ -17,12 +17,22 @@ steps:
     id  : DEPLOY
     args:
       - run
-      - services
-      - update
+      - -v
+      - /var/run/docker.sock:/var/run/docker.sock
+      - -it
       - $_SERVICE_NAME
       - --project=$_SERVICE_PROJECT
       - --region=$_SERVICE_REGION
       - --image=$_SERVICE_IMAGE
+
+    #args:
+    #  - run
+    #  - services
+    #  - update
+    #  - $_SERVICE_NAME
+    #  - --project=$_SERVICE_PROJECT
+    #  - --region=$_SERVICE_REGION
+    #  - --image=$_SERVICE_IMAGE
 
 images: # Display the image in the build results - Build Artifacts
 - $_SERVICE_IMAGE
