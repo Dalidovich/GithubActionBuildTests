@@ -18,7 +18,7 @@ FROM build AS publish
 RUN dotnet publish "GithubActionBuildTests.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
-ENV TestValues__Value1="I am on gcp3"
+ENV TestValues__Value1="I am on gcp"
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "GithubActionBuildTests.dll"]
