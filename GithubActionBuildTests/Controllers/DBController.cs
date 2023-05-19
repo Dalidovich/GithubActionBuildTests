@@ -17,7 +17,7 @@ namespace GithubActionBuildTests.Controllers
             _repo = repo;
         }
 
-        [HttpGet("v1/sum")]
+        [HttpGet("v1/susm")]
         public async Task<IActionResult> Sum([FromQuery] int a, [FromQuery] int b)
         {
             var calc = new Calculator(a, b);
